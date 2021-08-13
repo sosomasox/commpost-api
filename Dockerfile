@@ -9,10 +9,10 @@ RUN apt-get update && \
     apt-get install -y git nodejs npm
 
 RUN git clone https://github.com/sosomasox/commpost-api.git && \
-    cd commpost && \
+    cd commpost-api && \
     npm install
 
-WORKDIR commpost
+WORKDIR commpost-api
 
 ADD ./scripts/entrypoint.sh ./
 
