@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y git nodejs npm
 
-RUN git clone https://github.com/sosomasox/commpost-for-hacobune.git && \
+RUN git clone https://github.com/sosomasox/commpost-api.git && \
     cd commpost && \
     npm install
 
