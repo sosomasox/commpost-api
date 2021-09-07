@@ -1,5 +1,5 @@
+IMG=sosomasox/commpost-api:v1alpha1
 
-docker-build:
-	docker build --no-cache -t commpost-api:arm64 .
-	docker tag commpost-api:arm64 sosomasox/commpost-api:arm64
-	docker push sosomasox/commpost-api:arm64
+docker-buildx:
+	docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+	docker buildx build --platform linux/amd64,linux/arm64 -t ${IMG} --no-cache --push .
